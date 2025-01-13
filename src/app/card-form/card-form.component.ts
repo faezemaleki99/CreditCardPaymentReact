@@ -15,7 +15,6 @@ export class CardFormComponent {
     securityCode: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4)])
   })
 
-
   constructor() { }
 
   submitForm() {
@@ -23,5 +22,9 @@ export class CardFormComponent {
   }
   onResetForm(){
     console.log(this.cardForm.reset())
+  }
+
+  get f() {
+    return this.cardForm.controls
   }
 }
